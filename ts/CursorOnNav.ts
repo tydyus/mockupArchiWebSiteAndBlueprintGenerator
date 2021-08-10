@@ -2,8 +2,6 @@ const cursor = document.getElementById("underlineNav") as HTMLElement;
 
 const links = document.querySelectorAll("nav .link a") as NodeListOf<HTMLElement>;
 
-//links[0].getBoundingClientRect().top
-//links[0].getBoundingClientRect().left
 
 const move = (id:number) => {
     cursor.style.left =  (links[id].getBoundingClientRect().left - 10) + "px";
