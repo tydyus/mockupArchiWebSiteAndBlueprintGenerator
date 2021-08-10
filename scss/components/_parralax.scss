@@ -1,0 +1,24 @@
+.parralax{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    //background placeholder
+    background-image: url("../img/blueprint-964630_1280.jpg");
+    //content
+    p{
+        margin:0;
+        padding:2em 1em 2em 1em;
+        color:$white;
+        font-size: 2em;
+        text-transform: uppercase;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.intermede2{
+    background-image: url("../img/city-182223_1280.jpg");
+
+}
+

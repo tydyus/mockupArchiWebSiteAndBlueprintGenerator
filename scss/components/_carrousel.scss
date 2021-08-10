@@ -1,0 +1,60 @@
+.carrousel{
+    position:relative;
+    height: 60vh;
+    overflow: hidden;
+    padding:0;
+    > .vignette{
+        z-index: 1;
+        padding:10px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transition-duration: 3s;
+    }
+    > .next, > .prev{
+        z-index: 3;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 5%;
+        background: rgba(255, 255, 255, 0.3);
+        transition-duration: 1s;
+    }
+    > .next{right: 0;}
+    > .prev{left: 0;}
+    > .next:hover{width: 50%;}
+    > .prev:hover{width: 50%;}
+}
+
+#carrousel0{
+    > .vignette:nth-child(1){
+        z-index: 2;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%),
+            url("../img/spiral-1149509_1280.jpg")
+        ;
+        background-size: cover;
+    }
+    > .vignette:nth-child(2){
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%),
+            url("../img/architecture-1869398_1280.jpg");
+        background-size: cover;
+    }
+    > .vignette:nth-child(3){
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%),
+            url("../img/architecture-828596_1280.jpg");
+        background-size: cover;
+    }
+}
+
+//content
+
+.carrousel{
+    .vignette{
+        color: white;
+        padding: 0;
+        > *{padding: 0 10vw 0 10vw;}
+    }
+    h3, p{max-width: 60vw;}
+    h3{font-size: 2em; text-transform: uppercase;}
+}
+

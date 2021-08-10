@@ -1,0 +1,13 @@
+$hachureFond: 
+repeating-linear-gradient(45deg, transparent 1px, $creme 2px), 
+repeating-linear-gradient(135deg, transparent 1px, $creme 2px),
+$cremeDark
+;
+$hachureLight:repeating-linear-gradient(45deg, transparent 1px, $creme 2px);
+$hachureDark:repeating-linear-gradient(45deg, transparent 1px, $black 2px);
+
+$borderStrong:solid 3px $black;
+$border:solid 2px $black;
+$borderLight:solid 1px $black;
+
+$portableSize: 800px;

@@ -1,0 +1,123 @@
+nav{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 5vh;
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    background: $black;
+    color: $white;
+    display: flex;
+    h1{display: none;}
+    p{
+        font-size: 3vh;
+        margin:0;
+    }
+    .logo{
+        width: calc(30vw - 20px);
+        display: flex;
+        text-transform: uppercase;
+        img{
+            height: 5vh;
+            width: auto;
+        }
+        p{align-self: flex-end; letter-spacing: 0.2em;}
+    }
+    #menuPortableInput, #menuPortableInput{
+        display:none;
+        @media Screen and (max-width:$portableSize){
+            &[type="checkbox"]{z-index: 20;opacity: 0;}
+            display: block;
+            position: absolute;
+            top:5px;
+            right:5px;
+            height: 5vh;
+            width: 5vh;
+        }
+    }
+    .link{
+        width: calc(40vw - 20px);
+        display: flex;
+        justify-content: space-around;
+        > a{
+            align-self: flex-end;
+            color: $white;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+    #menuPortableInput, .menuPortableInputDeco{
+        display:none;
+        @media Screen and (max-width:$portableSize){
+            &[type="checkbox"]{z-index: 20;opacity: 0;}
+            margin:3px;
+            display: block;
+            position: absolute;
+            top:5px;
+            right:5px;
+            height: 5vh;
+            width: 5vh;
+            background: repeating-linear-gradient(
+                180deg, $white 0, $white 20%, 
+                transparent 20%, transparent 40%
+            );
+            transition-duration: 500ms;
+            &:hover ~ .menuPortableInputDeco{transform: rotate(180deg);}
+            &:checked ~ .menuPortableInputDeco{transform: rotate(90deg);}
+        }
+    }
+    @media Screen and (max-width:$portableSize){
+        .link{
+            position: absolute;
+            top:6vh;
+            right:calc(-35vw - 10px);
+            width: 30vw;
+            flex-direction: column;
+            background-color: $black;
+            margin: 7px 5px 5px 5px ;
+            padding: 15px 5px 15px 5px;
+            transition-duration: 1s;
+            > a{
+                padding: 5px;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: 4px;
+                    width: 0;
+                    background-color: $white;
+                    transition-duration: 600ms;
+                }
+                &:hover::after, &:active::after{
+                    width: 100%;
+                }
+            }
+        }
+        #menuPortableInput:checked ~ .link{right:-5px;}
+    }
+    &::after{
+        content: "";
+        z-index: 11;
+        position: absolute;
+        background-color: $white;
+        height: 1px;
+        width: 100%;
+        top: calc(5vh + 0.8em);
+        left: 0;
+    }
+}
+#underlineNav{
+    z-index: 11;
+    position: absolute;
+    background-color: $white;
+    height: 5px;
+    transition-duration: 300ms;
+    top: calc(5vh + 0.8em);
+    @media Screen and (max-width:$portableSize){
+        display:none;
+    }
+}

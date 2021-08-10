@@ -1,0 +1,106 @@
+.portFolio{
+    background-color: $black;
+    .portfolioCard{
+        
+        position: relative;
+        > .img p{
+            margin:0;
+            padding:4.5vw;
+            font-size: 80%;
+            font-weight: bold;
+            color: $white;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+        }
+        > .img, >.img > span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            > span{
+                background: url(../img/architecture-828596_1280.jpg), $black;
+                background-size: cover;
+                background-position: center;
+                transform: scale(1.3);
+                transition-duration: 1s;   
+            }
+        }
+        &:hover > .img > span, .select > .img > span{
+            transform: scale(1);
+        }
+        >.infoP, >.infoS {
+            z-index: 5;background-color: $black;color:$white;transition-duration: 1s; overflow: hidden;
+            p{
+                margin:3vw;
+                padding:1vw;
+                &.title{text-align: center;border:solid 2px $white;}
+            }
+        }
+        >.infoP{
+            position: absolute;
+            height: 100%; 
+            width: 0%;
+            top:0%;
+            &.tl, &.bl{
+                left: 100%;
+            }
+            &.tr, &.br{
+                right:100%;
+            }
+        }
+        &:hover > .infoP, &.select > .infoP{
+            width: calc(100% + 2px);
+        }
+        >.infoS{
+            position: absolute;
+            height: 0%;
+            width: calc(100% + 2px);
+            left: 0%;
+            &.tl, &.tr{
+                top: 100%;
+            }
+            &.bl, &.br{
+                bottom:100%;
+            }
+        }
+        &:hover > .infoS, &.select > .infoS{
+            height: calc(100% + 2px);
+        }
+    }
+}
+
+.portFolio #pfc1 >.img > span{
+    background: url("../img/prj/1.webp");background-size: cover;
+}.portFolio #pfc2 >.img > span{
+    background: url("../img/prj/2.webp");background-size: cover;
+}.portFolio #pfc3 >.img > span{
+    background: url("../img/prj/3.jpg");background-size: cover;
+}.portFolio #pfc4 >.img > span{
+    background: url("../img/prj/4.jpg");background-size: cover;
+}.portFolio #pfc5 >.img > span{
+    background: url("../img/prj/5.jpg");background-size: cover;
+}.portFolio #pfc6 >.img > span{
+    background: url("../img/prj/6.jpg");background-size: cover;
+}.portFolio #pfc7 >.img > span{
+    background: url("../img/prj/7.jpg");background-size: cover;
+}.portFolio #pfc8 >.img > span{
+    background: url("../img/prj/8.jpg");background-size: cover;
+}.portFolio #pfc9 >.img > span{
+    background: url("../img/prj/9.webp");background-size: cover;
+}.portFolio #pfc10 >.img > span{
+    background: url("../img/prj/10.jpg");background-size: cover;
+}.portFolio #pfc11 >.img > span{
+    background: url("../img/prj/11.jpg");background-size: cover;
+}.portFolio #pfc12 >.img > span{
+    background: url("../img/prj/12.jpg");background-size: cover;
+}.portFolio #pfc13 >.img > span{
+    background: url("../img/prj/13.jpg");background-size: cover;
+}.portFolio #pfc14 >.img > span{
+    background: url("../img/prj/14.jpg");background-size: cover;
+}.portFolio #pfc15 >.img > span{
+    background: url("../img/prj/15.webp");background-size: cover;
+}.portFolio #pfc16 >.img > span{
+    background: url("../img/prj/16.jpg");background-size: cover;
+}

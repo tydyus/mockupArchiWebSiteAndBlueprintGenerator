@@ -1,0 +1,235 @@
+#generatorBp{
+    display: flex;
+    > div{
+        > div {
+            position: relative;
+            z-index: 1;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;}
+            &:hover::after{border: 3px tomato solid;}
+            &.separateurAngle{
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 100%;
+            }
+            &.separateur.wall{background: $black;border-radius: 0;}
+            &.placeholder:not(.separateur)::after{
+                z-index: 2;
+                top: -25%;
+                left: -25%;
+                width: 125%;
+                height: 125%;
+                background: 
+                linear-gradient(90deg, $black 2px,transparent 2px
+                , transparent calc(100% - 2px), $black calc(100% - 2px)),
+                linear-gradient(180deg, $black 2px,transparent 2px
+                , transparent calc(100% - 2px), $black calc(100% - 2px)),
+                linear-gradient(45deg, transparent calc(50% - 0.5px), $black calc(50% - 0.5px)
+                , $black calc(50% + 0.5px), transparent calc(50% + 0.5px))
+                ;
+            }
+            &.placeholderR:not(.separateur)::after{
+                z-index: 2;
+                top: -25%;
+                left: -25%;
+                width: 125%;
+                height: 125%;
+                background: 
+                linear-gradient(90deg, $black 2px,transparent 2px
+                , transparent calc(100% - 2px), $black calc(100% - 2px)),
+                linear-gradient(180deg, $black 2px,transparent 2px
+                , transparent calc(100% - 2px), $black calc(100% - 2px)),
+                repeating-linear-gradient(45deg, transparent 0px, transparent 4px, $black 4px, $black 5px)
+                ;
+            }
+            &.seat:not(.separateur)::after{
+                z-index: 2;
+                top: 0%;
+                left: 0%;
+                width: 80%;
+                height: 80%;
+                border-radius: 30%;
+                border: solid 1px $black;
+                background:
+                linear-gradient(45deg, transparent calc(50% - 0.5px), $black calc(50% - 0.5px)
+                , $black calc(50% + 0.5px), transparent calc(50% + 0.5px))
+                ;
+            }
+            &.seatR:not(.separateur)::after{
+                z-index: 2;
+                top: 0%;
+                left: 0%;
+                width: 80%;
+                height: 80%;
+                border-radius: 30%;
+                border: solid 1px $black;
+                background: 
+                repeating-linear-gradient(45deg, transparent 0px, transparent 4px, $black 4px, $black 5px)
+                ;
+            }
+            &.case.floor::after{
+                top: -25%;
+                left: -25%;
+                width: 125%;
+                height: 125%;
+                background: linear-gradient(45deg, transparent calc(50% - 0.5px), $black calc(50% - 0.5px)
+                , $black calc(50% + 0.5px), transparent calc(50% + 0.5px));
+            }
+            &.case.floorR::after{
+                top: -25%;
+                left: -25%;
+                width: 125%;
+                height: 125%;
+                background: repeating-linear-gradient(45deg, transparent 0px, transparent 4px, $black 4px, $black 5px);
+            }
+            &.wallR{
+                background: 
+                linear-gradient(90deg, $black 1px,transparent 1px
+                , transparent calc(100% - 1px), $black calc(100% - 1px)),
+                linear-gradient(180deg, $black 1px,transparent 1px
+                , transparent calc(100% - 1px), $black calc(100% - 1px)),
+                repeating-linear-gradient(45deg, transparent 0px, transparent 4px, $black 4px, $black 5px)
+                ;
+                border-radius: 0;}
+            &.separateurHorizontal.door{
+                background: linear-gradient(90deg, $black 10%, transparent 10%, transparent 90%, $black 90%);
+                &::after{
+                    top:-400%;
+                    right: 0;
+                    left: auto;
+                    height: calc(500% - 2px);
+                    width: calc(100% - 4px);
+                    border: $black 2px dotted;
+                    border-right: solid;
+                    border-bottom: none;
+                    border-radius: 100% 0 0 0;
+                }
+            }
+            &.separateurHorizontal.doorR{
+                background: linear-gradient(90deg, $black 10%, transparent 10%, transparent 90%, $black 90%);
+                &::after{
+                    top:100%;
+                    right: 0;
+                    left:auto;
+                    height: calc(400% - 2px);
+                    width: calc(100% - 4px);
+                    border: $black 2px dotted;
+                    border-left: solid;
+                    border-top: none;
+                    border-radius: 0 0 100% 0;
+                }
+            }
+            &.separateurVerticale.door{
+                background: linear-gradient(180deg,$black 10%, transparent 10%, transparent 90%, $black 90%);
+                &::after{
+                    right:100%;
+                    left: auto;
+                    top: 0;
+                    width: calc(400% - 2px);
+                    height: calc(100% - 4px);
+                    border: $black 2px dotted;
+                    border-top: solid;
+                    border-right: none;
+                    border-radius: 0 0 0 100%;
+                }
+            }
+            &.separateurVerticale.doorR{
+                background: linear-gradient(180deg,$black 10%, transparent 10%, transparent 90%, $black 90%);
+                &::after{
+                    right:-400%;
+                    left: auto;
+                    top: 0;
+                    width: calc(500% - 2px);
+                    height: calc(100% - 4px);
+                    border: $black 2px dotted;
+                    border-bottom: solid;
+                    border-left: none;
+                    border-radius: 0 100% 0 0;
+                }
+            }
+
+
+        }
+    }
+}
+#generatorBPleftbar, #generatorBPrightbar{
+    display:flex;
+    flex-direction: column;
+    > button{
+        width: 100%;
+        margin: 3px;
+        border-radius: 0;
+        border:$border;
+        background: transparent;
+        position: relative;
+        &::after{
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            transition-duration: 600ms;
+            background: $black;
+        }
+        &:hover::after{
+            width: 20%;
+            
+        }
+        &:active{
+            padding-right: 20%;
+        }
+        &.select{
+            background: linear-gradient(90deg, $black 20%, transparent 20%);
+        }
+    }
+    #importGeneration{
+        position: relative;
+        > input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+}
+#validateNewGeneration{
+    display:none;
+}
+
+#newGeneration.security{
+    background: repeating-linear-gradient(45deg,transparent, transparent 4px, rgba(0, 0, 0, 0.6) 4px, rgba(0, 0, 0, 0.6) 6px);
+    border-color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    color: $black;
+}
+#newGeneration.security ~ #validateNewGeneration{
+    display:block;
+    color:$black;
+    background-color: tomato;
+    border: red 2px solid;
+    &:hover::after{
+        background-color: rgba(255, 0, 0, 0.514);
+        width: 100%;
+    }
+
+}
+
+.separateurAngle.placeholderBP{
+    width:0.5555555555555556vw; height:0.5555555555555556vw;
+}
+.separateurVerticale.placeholderBP{
+    width:0.5555555555555556vw; height:2.2222222222222223vw;
+}
+.separateurHorizontal.placeholderBP{
+    width:2.2222222222222223vw; height:0.5555555555555556vw;
+}
+.case.placeholderBP{
+    width:2.2222222222222223vw; height:2.2222222222222223vw;
+}

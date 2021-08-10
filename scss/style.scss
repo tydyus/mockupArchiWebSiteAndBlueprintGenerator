@@ -1,0 +1,220 @@
+//abstract
+@import "./abstract/colors";
+@import "./abstract/bg";
+//components
+@import "./components/nav";
+@import "./components/footer";
+@import "./components/carrousel";
+@import "./components/team";
+@import "./components/parralax";
+@import "./components/portFolio";
+@import "./components/blueprintGenerator";
+@import "./components/blueprintItem";
+//text
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+//data
+
+*{
+    font-family: 'Work Sans',Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth !important;
+}
+body{
+    margin:10px;
+    margin-top: calc(5vh + 20px);
+    margin-bottom: 0;
+    padding:10px;
+    padding-bottom: 0;
+    border: $borderStrong;
+    background: $hachureFond;
+}
+section{
+    margin: 10px;
+    border:$borderLight;
+    > div{
+        border:$borderLight;
+        padding:10px;
+    }
+}
+h2{
+    margin: 10px;
+    padding: 10px;
+    border:$border;
+    text-transform: uppercase;
+}
+
+.bio{
+    display: grid;
+    grid-template-columns: 34% 66%;
+    grid-template-rows: 100% ;
+    grid-template-areas: 
+    "img contentBio";
+    > .img {grid-area: img;}
+    > .content {grid-area: contentBio;}
+    > .img {
+        background: url("../img/startup-594090_1280.jpg");
+        background-size: cover;
+    }
+    > .content {
+        padding: 10px 20% 10px 20%;
+        p{max-width: 300px;}
+    }
+}
+.generatorSection{
+    @media Screen and (max-width:$portableSize){
+        display:none;
+    }
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 80% 20% ;
+    grid-template-areas: 
+    "leftbar generatorBp rightbar"
+    "toContact toContact toContact";
+    > .leftbar {grid-area: leftbar;}
+    > #generatorBp {grid-area: generatorBp;}
+    > .rightbar {grid-area: rightbar;}
+    > .toContact {grid-area: toContact;}
+}
+.teamSection{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 100% ;
+    grid-template-areas: 
+    "margeLeft card1 card2 card3 margeRight";
+    > .margeLeft {grid-area: margeLeft;}
+    > #card1 {grid-area: card1;}
+    > #card2 {grid-area: card2;}
+    > #card3 {grid-area: card3;}
+    > .margeRight {grid-area: margeRight;}
+    @media Screen and (max-width:$portableSize){
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 33.35% 33.35% 33.30%;
+        grid-template-areas: 
+        "margeLeft card1 margeRight"
+        "margeLeft card2 margeRight"
+        "margeLeft card3 margeRight";
+    }
+}
+.card{
+    padding:0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 3em auto 3em ;
+    grid-template-areas: 
+    "title" "img" "info";
+    text-align: center;
+    min-height: 10em;
+    > .title {grid-area: title; border-bottom:$borderLight; text-transform: uppercase;}
+    > .img {grid-area: img; }
+    > .info {grid-area: info; border-top:$borderLight;}
+    > .img{
+        padding:10px;
+        img{
+            border:$borderLight;
+            height: auto;
+            width: 100%;
+        }
+    } 
+}
+
+.portFolio{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas: 
+    "a b c d"
+    "e f g h"
+    "i j k l"
+    "m n o p";
+    > div{height: calc(25vw - 43px);}
+    > #pfc1{grid-area: a;}
+    > #pfc2{grid-area: b;}
+    > #pfc3{grid-area: c;}
+    > #pfc4{grid-area: d;}
+    > #pfc5{grid-area: e;}
+    > #pfc6{grid-area: f;}
+    > #pfc7{grid-area: g;}
+    > #pfc8{grid-area: h;}
+    > #pfc9{grid-area: i;}
+    > #pfc10{grid-area: j;}
+    > #pfc11{grid-area: k;}
+    > #pfc12{grid-area: l;}
+    > #pfc13{grid-area: m;}
+    > #pfc14{grid-area: n;}
+    > #pfc15{grid-area: o;}
+    > #pfc16{grid-area: p;}
+    @media Screen and (max-width:$portableSize){
+        grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "a c" "b d"
+    "e g" "f h"
+    "i k" "j l"
+    "m o" "n p";
+    > div{height: calc(50vw - 43px);}
+    }
+}
+.contact{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto ;
+    grid-template-areas: 
+    "form promo";
+    @media Screen and (max-width: 800px){
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto ;
+        grid-template-areas: "form" ;
+        > .promo{display: none;}
+    }
+    > .form{grid-area: form;}
+    > .promo{grid-area: promo;
+    background-image: url("../img/email-1435687_1280.png");
+    background-size: cover;
+    background-position: center;
+    }
+    
+    > .form form{
+        display: flex;
+        flex-direction: column;
+        > div{
+            display: flex;
+            justify-content: space-around;
+        }
+        input:not([type="file"]), textarea, > div, button{
+            background-color: rgba(255, 255, 255, 0.5);
+            border:$border;
+            border-radius: 0;
+            margin:5px;
+            padding:5px;
+            position: relative;
+            
+            &:focus {outline: none;
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+        }
+        .customcLoadaBP{
+            position: relative;
+            border:$borderLight;
+            padding: 0 5px 0 5px;
+            &hover{background-color: rgba(0, 0, 0, 0.3);}
+        }
+        [type="file"]{
+            position: absolute;
+            top: 0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            &:hover ~ span{
+                display: inline-block;
+            }
+        }
+        button:hover{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        button:active{
+            background-color: transparent;
+            color:$white;
+        }
+        label{text-transform: uppercase;}
+    }
+}
